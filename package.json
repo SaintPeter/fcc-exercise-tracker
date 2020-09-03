@@ -4,18 +4,19 @@
 	"description": "A REST API project, part of Free Code Camp's curriculum",
 	"main": "server.js",
 	"scripts": {
-		"start": "node server.js"
+		"start": "nodemon --exec babel-node server.js"
 	},
 	"dependencies": {
-		"express": "^4.14.0",
-		"mongoose": "^4.7.2",
-		"mongodb": "^2.2.14",
-		"body-parser": "^1.15.2",
-		"cors": "^2.8.1",
-		"shortid": "^2.2.6"
+		"body-parser": "^1.19.0",
+		"cors": "^2.8.5",
+		"express": "^4.17.1",
+		"moment": "^2.27.0",
+		"mongodb": "^3.6.0",
+		"mongoose": "^5.10.2",
+		"shortid": "^2.2.15"
 	},
 	"engines": {
-		"node": "6.9.1"
+		"node": "^12.*"
 	},
 	"repository": {
 		"url": "https://gomix.com/#!/project/welcome-project"
@@ -25,5 +26,11 @@
 		"node",
 		"gomix",
 		"express"
-	]
+	],
+	"devDependencies": {
+		"@babel/core": "^7.11.5",
+		"@babel/node": "^7.10.5",
+		"@babel/preset-env": "^7.11.5",
+		"@types/express": "^4.17.8"
+	}
 }
