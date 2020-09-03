@@ -86,14 +86,17 @@ app.post('/api/exercise/add', (req, res) => {
       return
     }
     
+    let exerDate = new Date();
+    if(req.body.date && req.body.date !== '') {
+      exerDate = new Date(req.body.date)
+    }
+    
     let exerciseFields = {
       description: req.body.description,
       duration: Number.parseInt(req.body.duration),
-      date: req.body.date !== '' ? new Date(req.body.date) : new Date() 
+      date:  exerDate 
     } 
     
-    console.log(exerciseFields)
-
     // Append the new Exercise
     user.log.push(exerciseFields)
     
