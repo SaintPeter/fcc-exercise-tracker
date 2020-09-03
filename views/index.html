@@ -11,13 +11,13 @@
    <body>
       <div class="container">
          <h1>Exercise tracker</h1>
-          <form action="/api/exercise/new-user" method="post">
+          <form action="api/exercise/new-user" method="post">
             <h3>Create a New User</h3>
             <p><code>POST /api/exercise/new-user</code></p>
             <input id="uname" type="text" name="username" placeholder="username">
             <input type="submit" value="Submit">
           </form>
-          <form action="/api/exercise/add" method="post">
+          <form action="api/exercise/add" method="post">
             <h3>Add exercises</h3>
             <p><code>POST /api/exercise/add</code></p>
             <input id="uid" type="text" name="userId" placeholder="userId*">
@@ -26,7 +26,7 @@
             <input id="dat" type="text" name="date" placeholder="date (yyyy-mm-dd)">
             <input type="submit" value="Submit">
           </form>
-          <form action="/api/exercise/log" method="get">
+          <form action="api/exercise/log" method="get">
               <h3>Exercise Log Query</h3>
               <p><code>GET /api/exercise/log</code></p>
               <input id="userId" type="text" name="userId" placeholder="userId*">
