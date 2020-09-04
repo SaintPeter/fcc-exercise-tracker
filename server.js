@@ -71,7 +71,7 @@ app.get('/api/exercise/users', (req, res) => {
   // Find all user documents
   userModel.find({}, (err, users) => {
     if(err) console.log(err)
-    console.log(users)
+    //console.log(users)
     res.send(users)
   })
 })
@@ -133,13 +133,13 @@ app.get('/api/exercise/log', (req, res) => {
   let conditions = [ 1 ];
   let project = [];
   
-  if(req.query.from !== '') {
+  if(req.query.from && req.query.from !== '') {
     conditions.push({
       $gte: ['$$item.date', new Date(req.query.from)]
     })
   }
   
-  if(req.query.to !== '') {
+  if(req.query.to && req.query.to !== '') {
     conditions.push({
       $lte: ['$$item.date',new Date(req.query.to)]
     })
@@ -176,9 +176,12 @@ app.get('/api/exercise/log', (req, res) => {
       }
     });
   }
+	console.dir(query,{depth: null});
  
   userModel.aggregate(query,(err, result) => {
     if(err) console.log(err)
+
+    console.log("Result",result,99)
 
     // Reformat the date to the "standard" format
     result = result.map((user) => {
