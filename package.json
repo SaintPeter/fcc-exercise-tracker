@@ -5,7 +5,7 @@
 	"main": "server.js",
 	"scripts": {
 		"start": "nodemon --exec babel-node server.js",
-		"build-server": "npx babel -d ./server-babel.js -s",
+		"build-server": "npx babel server.js -o ./server-babel.js -s",
 		"build": "npm run build-server",
 		"start-prod": "node ./server-babel.js"
 	},
